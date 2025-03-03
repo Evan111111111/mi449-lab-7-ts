@@ -9,12 +9,15 @@ title: 11ty Boilerplate
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/styles/screen.css">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.10.2/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@alpinejs/fetch@3.10.2/dist/cdn.min.js" defer></script>
 </head>
 <body>
-  <nav>
-    <ul>
-      <li><a href="/" title="Go home">Home</a></li>
-      <li><a href="/about/" title="About the boilerplate">About</a></li>
+  <nav class="shadow-md">
+    <ul class="flex space-x-4 p-4">
+      <li><a href="/" title="Go home" class="text-blue-500 hover:underline">Home</a></li>
+      <li><a href="/about/" title="About the boilerplate" class="text-blue-500 hover:underline">About</a></li>
     </ul>
   </nav>
     {{ content }}

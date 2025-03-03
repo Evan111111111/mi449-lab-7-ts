@@ -3,5 +3,45 @@ layout: layout.liquid
 title: 11ty Boilerplate
 ---
 
-<h1>Yet Another 11ty <strong>Boilerplate</strong></h1>
-<img alt="pine" src="/images/pine.png" width="50" />
+<body class="bg-gray-100 text-gray-900">
+  <nav class="bg-white shadow-md">
+  </nav>
+    
+  <div class="container mx-auto px-4 py-8 bg-yellow-100 mt-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- First endpoint box -->
+      <div class="bg-yellow-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div id="post" class="max-w-xl text-black">
+          <h2 id="post-title" class="text-2xl font-bold mb-4"></h2>
+          <p id="post-body" class="text-gray-700"></p>
+        </div>
+      </div>
+
+      <!-- Second endpoint box -->
+      <div class="bg-yellow-50 rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow">
+        <div id="post2" class="max-w-xl text-black">
+          <h2 id="post-title2" class="text-2xl font-bold mb-4"></h2>
+          <p id="post-body2" class="text-gray-700"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // First endpoint
+    fetch('https://jsonplaceholder.typicode.com/posts/1')
+      .then((response) => response.json())
+      .then((json) => {
+        document.getElementById('post-title').innerText = json.title;
+        document.getElementById('post-body').innerText = json.body;
+      });
+
+    // Second endpoint
+    fetch('https://jsonplaceholder.typicode.com/posts/2')
+      .then((response) => response.json())
+      .then((json) => {
+        document.getElementById('post-title2').innerText = json.title;
+        document.getElementById('post-body2').innerText = json.body;
+      });
+  </script>
+</body>
